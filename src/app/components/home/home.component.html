@@ -1,0 +1,59 @@
+<div class="container">
+
+    <div class="card">
+
+        <h1>Support Sonam DP</h1>
+
+        <p class="subtitle">
+           Show your support! Upload your photo and create your "Support Sonam" DP in seconds.
+        </p>
+
+        <img
+            src="assets/sframe.png"
+            class="preview"
+            alt="Frame Preview"
+        >
+
+        <div class="features">
+
+            <p>✔ Takes less than 10 seconds</p>
+            <p>✔ No Signup Required</p>
+            <!-- <p>✔ HD Download</p>
+            <p>✔ Free Forever</p> -->
+
+        </div>
+
+        <div
+            class="drop-area"
+            [class.active]="dragActive"
+            (dragover)="dragOver($event)"
+            (dragleave)="dragLeave($event)"
+            (drop)="drop($event)"
+        >
+
+            Drag & Drop Image Here
+
+        </div>
+
+        <button
+            class="primary-btn"
+            (click)="browse(fileInput)"
+        >
+            Upload Your Photo
+        </button>
+
+        <input
+            #fileInput
+            hidden
+            type="file"
+            accept=".png,.jpg,.jpeg,.webp"
+            (change)="fileSelected($event)"
+        >
+
+        <p class="error" *ngIf="error">
+            {{error}}
+        </p>
+
+    </div>
+
+</div>

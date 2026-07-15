@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="card">
+
+        <h2>Your Profile Picture</h2>
+
+        <img
+            class="result"
+            [src]="imageService.generatedImage"
+        >
+
+        <button
+            class="primary-btn"
+            (click)="download()"
+        >
+            Download 
+        </button>
+
+        <button
+            class="secondary-btn"
+            (click)="again()"
+        >
+            Reset
+        </button>
+
+      
+    </div>
+      <div class="share">
+
+            <h3>Support Sonam Wangchuk Campaign</h3>
+
+            <p>
+                Help others create their own profile picture.
+            </p>
+
+            <button
+                class="share-btn"
+                (click)="share()"
+            >
+                Share This Website
+            </button>
+
+        </div>
+
+
+</div>

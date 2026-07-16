@@ -66,19 +66,19 @@ export class PreviewComponent {
       return;
     }
 
+    const shareUrl = 'https://sonam-wanchuk-support-dp.vercel.app/';
+
     if (navigator.share) {
 
       await navigator.share({
         title: 'Support Sonam',
         text: 'Create your Support Sonam profile picture.',
-        url: window.location.origin
+        url: shareUrl
       });
 
     } else {
 
-      await navigator.clipboard.writeText(
-        window.location.origin
-      );
+      await navigator.clipboard.writeText(shareUrl);
 
       alert('Link Copied Successfully');
 

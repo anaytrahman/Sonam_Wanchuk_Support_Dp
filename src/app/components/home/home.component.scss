@@ -73,3 +73,13 @@ h1{
     text-align:center;
 
 }
+
+@media (max-width: 768px) {
+
+    .drop-area {
+
+        display: none;
+
+    }
+
+}

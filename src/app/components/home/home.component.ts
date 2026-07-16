@@ -24,6 +24,20 @@ export class HomeComponent {
     input.click();
   }
 
+  async share() {
+    if (!navigator.share) {
+      await navigator.clipboard.writeText(window.location.origin);
+      alert('Link Copied Successfully');
+      return;
+    }
+
+    await navigator.share({
+      title: 'Support Sonam',
+      text: 'Create your Support Sonam profile picture.',
+      url: window.location.origin
+    });
+  }
+
   fileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
 

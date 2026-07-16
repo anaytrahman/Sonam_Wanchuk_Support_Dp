@@ -109,4 +109,21 @@ export class CropperComponent {
 
   }
 
+  async share() {
+    if (!this.isBrowser) {
+      return;
+    }
+
+    if (navigator.share) {
+      await navigator.share({
+        title: 'Support Sonam',
+        text: 'Create your Support Sonam profile picture.',
+        url: window.location.origin
+      });
+    } else {
+      await navigator.clipboard.writeText(window.location.origin);
+      alert('Link Copied Successfully');
+    }
+  }
+
 }
